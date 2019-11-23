@@ -77,4 +77,8 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoHolder> {
   public int getItemCount() {
     return todoList.size();
   }
+
+  public void clear() {
+    todoList.clear();
+  }
 }
