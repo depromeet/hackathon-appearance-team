@@ -4,6 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:background="@android:color/black"
   tools:context=".TaskDetailActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +33,9 @@
       <EditText
         android:id="@+id/et_task_title"
         android:layout_width="match_parent"
+        android:backgroundTint="@color/color_gray"
         android:layout_height="wrap_content"
+        android:textColorHighlight="@color/colorPrimary"
         android:hint="@string/task_detail_title"
         android:inputType="text"
         android:maxLines="1"
@@ -56,6 +59,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/task_detail_desc"
+        android:backgroundTint="@color/color_gray"
+        android:textColorHighlight="@color/colorPrimary"
         android:inputType="text"
         android:maxLines="1" />
 
@@ -74,24 +79,128 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/layout_task_desc" />
 
+    <EditText
+      android:id="@+id/et_task_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:backgroundTint="@color/color_gray"
+      android:cursorVisible="false"
+      android:focusable="false"
+      android:inputType="date"
+      android:text="11월 9일 (금) 오전 12:00"
+      android:textColor="@color/color_gray"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_task_date" />
+
+    <EditText
+      android:id="@+id/et_task_repeat"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:backgroundTint="@color/color_gray"
+      android:cursorVisible="false"
+      android:focusable="false"
+      android:inputType="text"
+      android:text="매주 월,화,수,목,금"
+      android:textColor="@color/color_gray"
+      android:visibility="invisible"
+      app:layout_constraintStart_toEndOf="@+id/et_task_date"
+      app:layout_constraintTop_toTopOf="@+id/et_task_date"
+      app:layout_goneMarginStart="16dp" />
+
     <CheckBox
       android:id="@+id/cb_task_repeat"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginEnd="16dp"
       android:text="@string/task_detail_repeat"
+      android:buttonTint="@color/colorPrimary"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintTop_toTopOf="@id/tv_task_date" />
 
     <TextView
+      android:id="@+id/tv_task_rank"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:text="@string/task_detail_rank"
+      android:layout_marginTop="32dp"
       android:textColor="@android:color/white"
       android:textSize="14sp"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/cb_task_repeat" />
+      app:layout_constraintTop_toBottomOf="@id/et_task_date" />
 
+    <TextView
+      android:id="@+id/tv_task_rank_desc"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:text="@string/task_detail_rank_desc"
+      android:textSize="12sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tv_task_rank" />
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/back_rank_btns"
+      android:orientation="horizontal"
+      android:padding="3dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tv_task_rank_desc">
+
+      <Button
+        android:id="@+id/btn_task_priority1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_weight="1"
+        android:background="@drawable/back_rank_btn"
+        android:drawableTop="@drawable/ic_priority_yellow1"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/task_priority_low"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+      <Button
+        android:id="@+id/btn_task_priority2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_priority_yellow2"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/task_priority_middle"
+        android:textColor="@android:color/white"
+        android:textStyle="normal" />
+
+      <Button
+        android:id="@+id/btn_task_priority3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:drawableTop="@drawable/ic_priority_yellow3"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="@string/task_priority_high"
+        android:textColor="@android:color/white"
+        android:textStyle="normal" />
+
+    </LinearLayout>
   </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
