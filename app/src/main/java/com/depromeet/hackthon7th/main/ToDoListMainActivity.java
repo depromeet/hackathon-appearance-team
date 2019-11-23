@@ -98,7 +98,6 @@ public class ToDoListMainActivity extends AppCompatActivity {
       @Override
       public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         final int position = viewHolder.getAdapterPosition();
-        mList.remove(position);
         deleteTask(mList.get(position).getId(), new RealmCallback() {
           @Override
           public void onSuccess() {
@@ -111,6 +110,7 @@ public class ToDoListMainActivity extends AppCompatActivity {
 
           }
         });
+        mList.remove(position);
         mAdapter.notifyItemRemoved(position);
       }
     };
