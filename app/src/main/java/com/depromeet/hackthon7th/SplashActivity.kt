@@ -3,9 +3,8 @@ package com.depromeet.hackthon7th
 import android.animation.Animator
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-
+import com.depromeet.hackthon7th.main.ToDoListMainActivity
 import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onAnimationEnd(p0: Animator?) {
-                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                startActivity(Intent(this@SplashActivity, ToDoListMainActivity::class.java))
             }
 
             override fun onAnimationCancel(p0: Animator?) {
