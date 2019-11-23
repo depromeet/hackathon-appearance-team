@@ -58,7 +58,7 @@ public class ToDoListMainActivity extends AppCompatActivity {
         Log.d("윤지한테가자", "고고");
         startActivityForResult(
             TaskDetailActivity.Companion.getStartIntent(ToDoListMainActivity.this),
-            AppConstantKt.getSTART_ADD_TASK());
+            AppConstantKt.START_ADD_TASK);
       }
     });
 
