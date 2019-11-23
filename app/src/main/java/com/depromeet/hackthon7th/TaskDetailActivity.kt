@@ -77,6 +77,8 @@ class TaskDetailActivity : AppCompatActivity() {
                     getDrawable(if (isChecked) priorityOrange[i] else priorityYellow[i])
                 btn.setCompoundDrawablesWithIntrinsicBounds(null, btnDrawable, null, null)
             }
+            cb_task_repeat.buttonTintList =
+                getColorStateList(if (isChecked) R.color.colorPrimary else android.R.color.white)
         }
 
         priorityBtns.forEach { btn ->

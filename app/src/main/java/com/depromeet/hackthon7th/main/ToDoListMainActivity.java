@@ -57,7 +57,6 @@ public class ToDoListMainActivity extends AppCompatActivity {
     fab.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Log.d("윤지한테가자", "고고");
         startActivityForResult(
             TaskDetailActivity.Companion.getStartIntent(ToDoListMainActivity.this),
             AppConstantKt.START_ADD_TASK);
@@ -106,7 +105,7 @@ public class ToDoListMainActivity extends AppCompatActivity {
 
           @Override
           public void onError(Throwable error) {
-            Log.d("실페!!", error.getMessage());
+            Log.d("실패!!", error.getMessage());
 
           }
         });
@@ -128,24 +127,6 @@ public class ToDoListMainActivity extends AppCompatActivity {
   }
 
   public void allData() {
-/*
-        TaskUtil.addTask(new Task("title입니다.", ""
-                , TaskType.WEEKDAYS, new Date(2019, 11, 23),
-                new Date(2019, 11, 23),
-                new Date(2019, 11, 23)
-                , Priority.NORMAL), new RealmCallback() {
-            @Override
-            public void onSuccess() {
-                Log.d("성공!!", "들어감");
-            }
-
-            @Override
-            public void onError(Throwable error) {
-                Log.d("실페!!", error.getMessage());
-
-
-            }
-        });*/
 
     List<Task> task = TaskUtil.getTasks();
     int size = task.size();
