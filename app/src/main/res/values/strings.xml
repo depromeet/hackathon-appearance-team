@@ -1,10 +1,22 @@
 <resources>
   <string name="app_name">구질구질한 알림</string>
 
+  <string name="all_finish">완료</string>
+
+  <string name="task_detail_label">상세보기</string>
   <string name="task_detail_title">상세보기</string>
   <string name="task_detail_desc">설명</string>
   <string name="task_detail_time">시간</string>
   <string name="task_detail_date">날짜</string>
+  <string name="task_detail_repeat">반복</string>
   <string name="task_detail_condition">반복조건</string>
   <string name="task_detail_rank">우선순위</string>
+  <string name="task_detail_max">최대 20자까지 입력 가능합니다.</string>
+  <string name="task_priority_very_high">매우 높음</string>
+  <string name="task_priority_high">높음</string>
+  <string name="task_priority_middle">중간</string>
+  <string name="task_priority_low">낮음</string>
+  <string name="task_priority_very_low">매우 낮음</string>
+  <string name="task_priority_push_time">알림 받는 시간</string>
+  <string name="task_detail_empty">비어있습니다.</string>
 </resources>
