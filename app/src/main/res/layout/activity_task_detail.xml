@@ -96,7 +96,6 @@
       android:cursorVisible="false"
       android:focusable="false"
       android:inputType="date"
-      android:text="11월 9일 (금) 오전 12:00"
       android:textColor="@color/color_gray"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/tv_task_date" />
@@ -152,6 +151,7 @@
       app:layout_constraintTop_toBottomOf="@id/tv_task_rank" />
 
     <LinearLayout
+      android:id="@+id/layout_task_btns"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
@@ -209,5 +209,75 @@
         android:textStyle="normal" />
 
     </LinearLayout>
+
+    <TextView
+      android:id="@+id/tv_task_push"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="32dp"
+      android:text="@string/task_detail_push_time"
+      android:textColor="@android:color/white"
+      android:textSize="14sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/layout_task_btns" />
+
+    <com.jaygoo.widget.RangeSeekBar
+      android:id="@+id/sb_task_range"
+      android:layout_width="0dp"
+      android:layout_height="20dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="37dp"
+      android:layout_marginEnd="16dp"
+      android:paddingBottom="0dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tv_task_push"
+      app:rsb_progress_color="@color/colorAccent"
+      app:rsb_progress_default_color="@color/color_gray"
+      app:rsb_thumb_drawable="@drawable/ic_circle_yellow"
+      app:rsb_thumb_height="20dp"
+      app:rsb_thumb_scale_ratio="1.2"
+      app:rsb_thumb_width="20dp" />
+
+    <EditText
+      android:id="@+id/et_task_before"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:backgroundTint="@color/color_gray"
+      android:cursorVisible="false"
+      android:focusable="false"
+      android:text="12시간 전"
+      android:textColor="@color/color_gray"
+      android:textSize="14sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/sb_task_range" />
+
+    <EditText
+      android:id="@+id/et_task_after"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="16dp"
+      android:backgroundTint="@color/color_gray"
+      android:cursorVisible="false"
+      android:focusable="false"
+      android:text="12시간 후"
+      android:textColor="@color/color_gray"
+      android:textSize="14sp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/sb_task_range" />
+
+    <TextView
+      android:id="@+id/tv_task_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:drawableTop="@drawable/ic_triangle"
+      android:text="오전 12:00"
+      android:textColor="@color/color_gray"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/sb_task_range" />
   </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

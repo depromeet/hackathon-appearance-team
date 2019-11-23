@@ -90,6 +90,9 @@ class TaskDetailActivity : AppCompatActivity() {
                 }
             }
         }
+
+        sb_task_range.setRange(-779f, 779f)
+        sb_task_range.setProgress(0f, 0f)
     }
 
     private fun checkAvailable(): Boolean {

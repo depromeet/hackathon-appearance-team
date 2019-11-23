@@ -1,5 +1,7 @@
 package com.depromeet.hackthon7th.util
 
+import com.depromeet.hackthon7th.R
+import com.depromeet.hackthon7th.RootApplication
 import java.util.*
 
 
@@ -14,7 +16,7 @@ fun getCurrentDateTime(): String {
     val cal = Calendar.getInstance()
 
     return String.format(
-        timeFormat,
+        RootApplication.getContext().getString(R.string.format_datetime),
         cal.get(Calendar.MONTH) + 1,
         cal.get(Calendar.DATE),
         dayOfWeek[cal.get(Calendar.DAY_OF_WEEK) - 1],
