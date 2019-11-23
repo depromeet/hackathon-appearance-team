@@ -10,13 +10,12 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import com.depromeet.hackthon7th.database.RealmCallback
-import com.depromeet.hackthon7th.database.Task
-import com.depromeet.hackthon7th.database.TaskUtil
+import com.depromeet.hackthon7th.database.*
 import com.depromeet.hackthon7th.ext.Toaster
 import com.depromeet.hackthon7th.ext.checkLengthAndShowMessage
 import com.depromeet.hackthon7th.util.getCurrentDateTime
 import kotlinx.android.synthetic.main.activity_task_detail.*
+import java.util.*
 
 
 class TaskDetailActivity : AppCompatActivity() {
@@ -109,7 +108,7 @@ class TaskDetailActivity : AppCompatActivity() {
     private fun addTaskIntoDatabase() {
         val title = et_task_title.text.toString()
         val desc = et_task_desc.text.toString()
-        val newTask = Task()
+        val newTask = Task(title, desc, TaskType.ONCE, Date(), Date(), Date(), Priority.HIGH)
 
         TaskUtil.addTask(newTask, object : RealmCallback {
             override fun onSuccess() {
