@@ -55,8 +55,8 @@ public class Task extends RealmObject {
         return description;
     }
 
-    public TaskType getType() {
-        return TaskType.valueOf(type);
+    public String getType() {
+        return type;
     }
 
     public Date getDeadLine() {
@@ -75,8 +75,8 @@ public class Task extends RealmObject {
         return alarmEnd;
     }
 
-    public Priority getPriority() {
-        return Priority.valueOf(priority);
+    public String getPriority() {
+        return priority;
     }
     // Setter
 
