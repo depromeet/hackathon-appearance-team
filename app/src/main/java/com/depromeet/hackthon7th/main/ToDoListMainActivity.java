@@ -2,6 +2,7 @@ package com.depromeet.hackthon7th.main;
 
 import static com.depromeet.hackthon7th.database.TaskUtil.deleteTask;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -159,8 +161,12 @@ public class ToDoListMainActivity extends AppCompatActivity {
           priority);
       mList.add(data);
     }
-
-
   }
 
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+    super.onActivityResult(requestCode, resultCode, data);
+    allData();
+    mAdapter.notifyDataSetChanged();
+  }
 }

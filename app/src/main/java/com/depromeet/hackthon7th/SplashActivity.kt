@@ -20,6 +20,7 @@ class SplashActivity : AppCompatActivity() {
 
             override fun onAnimationEnd(p0: Animator?) {
                 startActivity(Intent(this@SplashActivity, ToDoListMainActivity::class.java))
+                finish()
             }
 
             override fun onAnimationCancel(p0: Animator?) {
