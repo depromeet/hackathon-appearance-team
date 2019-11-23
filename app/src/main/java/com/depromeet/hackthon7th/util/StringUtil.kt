@@ -5,12 +5,17 @@ import com.depromeet.hackthon7th.RootApplication
 import java.util.*
 
 
-const val timeFormat = "%d월 %d일 (%s) %s %d:%d"
 val dayOfWeek = arrayOf("일", "월", "화", "수", "목", "금", "토")
 
-fun getDateTime(date: Date) {
-
-}
+fun getDateTime(date: Date) = String.format(
+    RootApplication.getContext().getString(R.string.format_datetime),
+    date.month + 1,
+    date.date,
+    dayOfWeek[date.day],
+    if (date.hours <= 12) "오전" else "오후",
+    if (date.hours > 12) date.hours - 12 else date.hours,
+    date.minutes
+)
 
 fun getCurrentDateTime(): String {
     val cal = Calendar.getInstance()

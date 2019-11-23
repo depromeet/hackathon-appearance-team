@@ -70,7 +70,6 @@ public class ToDoListAdapter extends RecyclerView.Adapter<ToDoHolder> {
     }
     holder.date.setText(item.getDate());
     holder.time.setText(item.getTime());
-
   }
 
   @Override

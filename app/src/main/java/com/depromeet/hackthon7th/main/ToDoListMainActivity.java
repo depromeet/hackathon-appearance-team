@@ -22,6 +22,7 @@ import com.depromeet.hackthon7th.TaskDetailActivity;
 import com.depromeet.hackthon7th.database.RealmCallback;
 import com.depromeet.hackthon7th.database.Task;
 import com.depromeet.hackthon7th.database.TaskUtil;
+import com.depromeet.hackthon7th.util.StringUtilKt;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import io.realm.Realm;
 import java.util.ArrayList;
@@ -136,7 +137,7 @@ public class ToDoListMainActivity extends AppCompatActivity {
       String taskType = task.get(i).getType();
       String title = task.get(i).getTitle();
       String desc = task.get(i).getDescription();
-      String date = task.get(i).getDeadLine().toString();
+      String date = StringUtilKt.getDateTime(task.get(i).getDeadLine());
       String priority = task.get(i).getPriority();
       ToDoListItem data = new ToDoListItem(id, alarmType, taskType, title, desc, date, "",
           priority);
