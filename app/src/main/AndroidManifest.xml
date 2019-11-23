@@ -27,5 +27,4 @@
             android:name=".TaskDetailActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
     </application>
-
 </manifest>
