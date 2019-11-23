@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   package="com.depromeet.hackthon7th">
 
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+
   <application
       android:name=".RootApplication"
     android:allowBackup="true"
