@@ -4,7 +4,7 @@
   <string name="all_finish">완료</string>
 
   <string name="task_detail_label">상세보기</string>
-  <string name="task_detail_title">상세보기</string>
+  <string name="task_detail_title">제목</string>
   <string name="task_detail_desc">설명</string>
   <string name="task_detail_time">시간</string>
   <string name="task_detail_date">날짜</string>
@@ -19,4 +19,5 @@
   <string name="task_priority_very_low">매우 낮음</string>
   <string name="task_priority_push_time">알림 받는 시간</string>
   <string name="task_detail_empty">비어있습니다.</string>
+  <string name="task_detail_error">할 일 추가에 실패했습니다. 다시 시도해주세요.</string>
 </resources>

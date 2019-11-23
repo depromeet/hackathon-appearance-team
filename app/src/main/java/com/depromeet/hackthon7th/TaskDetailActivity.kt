@@ -7,6 +7,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
+import com.depromeet.hackthon7th.database.RealmCallback
+import com.depromeet.hackthon7th.database.Task
+import com.depromeet.hackthon7th.database.TaskUtil
+import com.depromeet.hackthon7th.ext.Toaster
 import com.depromeet.hackthon7th.ext.checkLengthAndShowMessage
 import kotlinx.android.synthetic.main.activity_task_detail.*
 
@@ -50,6 +54,23 @@ class TaskDetailActivity : AppCompatActivity() {
         return checkTitle && checkDesc
     }
 
+    private fun addTaskIntoDatabase() {
+        val title = et_task_title.text.toString()
+        val desc = et_task_desc.text.toString()
+        val newTask = Task()
+
+        TaskUtil.addTask(newTask, object : RealmCallback {
+            override fun onSuccess() {
+                setResult(ADD_TASK_SUCCESS)
+                finish()
+            }
+
+            override fun onError(error: Throwable?) {
+                Toaster.showShort(R.string.task_detail_error)
+            }
+        })
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_task, menu)
         return super.onCreateOptionsMenu(menu)
@@ -58,7 +79,7 @@ class TaskDetailActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> finish()
-            R.id.menu_finish -> if (checkAvailable()) finish()
+            R.id.menu_finish -> if (checkAvailable()) addTaskIntoDatabase()
         }
 
         return true
