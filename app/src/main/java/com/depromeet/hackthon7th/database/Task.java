@@ -1,9 +1,8 @@
 package com.depromeet.hackthon7th.database;
 
-import java.util.Date;
-
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
+import java.util.Date;
 
 public class Task extends RealmObject {
 
@@ -55,8 +54,8 @@ public class Task extends RealmObject {
         return description;
     }
 
-    public String getType() {
-        return type;
+  public String getType() {
+    return type;
     }
 
     public Date getDeadLine() {
@@ -75,8 +74,8 @@ public class Task extends RealmObject {
         return alarmEnd;
     }
 
-    public String getPriority() {
-        return priority;
+  public String getPriority() {
+    return priority;
     }
     // Setter
 

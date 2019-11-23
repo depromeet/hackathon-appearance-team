@@ -18,6 +18,8 @@ class RootApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        APPLICATION_CONTEXT = applicationContext
+
         Realm.init(this)
     }
 }
