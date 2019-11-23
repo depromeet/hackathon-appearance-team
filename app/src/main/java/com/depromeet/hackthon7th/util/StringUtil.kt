@@ -25,3 +25,28 @@ fun getCurrentDateTime(): String {
         cal.get(Calendar.MINUTE)
     )
 }
+
+fun getCurrentTime(): String {
+    val cal = Calendar.getInstance()
+
+    return String.format(
+        "%s %d:%02d",
+        if (cal.get(Calendar.AM_PM) == 0) "오전" else "오후",
+        cal.get(Calendar.HOUR),
+        cal.get(Calendar.MINUTE)
+    )
+}
+
+fun getBeforeTime(value: Float): String {
+    val hour = -(value / 60).toInt()
+    val minutes = -(value % 60).toInt()
+
+    return "${hour}시간 ${minutes}분 전"
+}
+
+fun getAfterTime(value: Float): String {
+    val hour = value.toInt() / 60
+    val minutes = value.toInt() % 60
+
+    return "${hour}시간 ${minutes}분 전"
+}

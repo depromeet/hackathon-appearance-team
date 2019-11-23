@@ -13,7 +13,12 @@ import androidx.core.widget.addTextChangedListener
 import com.depromeet.hackthon7th.database.*
 import com.depromeet.hackthon7th.ext.Toaster
 import com.depromeet.hackthon7th.ext.checkLengthAndShowMessage
+import com.depromeet.hackthon7th.util.getAfterTime
+import com.depromeet.hackthon7th.util.getBeforeTime
 import com.depromeet.hackthon7th.util.getCurrentDateTime
+import com.depromeet.hackthon7th.util.getCurrentTime
+import com.jaygoo.widget.OnRangeChangedListener
+import com.jaygoo.widget.RangeSeekBar
 import kotlinx.android.synthetic.main.activity_task_detail.*
 import java.util.*
 
@@ -45,6 +50,7 @@ class TaskDetailActivity : AppCompatActivity() {
         )
 
         et_task_date.setText(getCurrentDateTime())
+        tv_task_time.text = getCurrentTime()
         et_task_date.setOnClickListener {
 
         }
@@ -93,6 +99,23 @@ class TaskDetailActivity : AppCompatActivity() {
 
         sb_task_range.setRange(-779f, 779f)
         sb_task_range.setProgress(0f, 0f)
+        sb_task_range.setOnRangeChangedListener(object : OnRangeChangedListener {
+            override fun onStartTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {
+            }
+
+            override fun onRangeChanged(
+                view: RangeSeekBar?,
+                leftValue: Float,
+                rightValue: Float,
+                isFromUser: Boolean
+            ) {
+                et_task_before.setText(getBeforeTime(leftValue))
+                et_task_after.setText(getAfterTime(rightValue))
+            }
+
+            override fun onStopTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {
+            }
+        })
     }
 
     private fun checkAvailable(): Boolean {
