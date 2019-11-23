@@ -1,3 +1,10 @@
 <resources>
-  <string name="app_name">Hackthon7th</string>
+  <string name="app_name">구질구질한 알림</string>
+
+  <string name="task_detail_title">상세보기</string>
+  <string name="task_detail_desc">설명</string>
+  <string name="task_detail_time">시간</string>
+  <string name="task_detail_date">날짜</string>
+  <string name="task_detail_condition">반복조건</string>
+  <string name="task_detail_rank">우선순위</string>
 </resources>
