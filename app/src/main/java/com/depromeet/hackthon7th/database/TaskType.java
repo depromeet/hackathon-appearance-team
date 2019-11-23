@@ -6,7 +6,8 @@ public enum TaskType {
     WEEKLY("weekly"),
     MONTHLY("monthly"),
     WEEKEND("weekend"),
-    WEEKDAYS("weekdays");
+    WEEKDAYS("weekdays"),
+    ETC("etc");
 
     private String type;
 
