@@ -1,9 +1,7 @@
 package com.depromeet.hackthon7th.database;
 
 import java.util.Date;
-import java.util.List;
 
-import io.realm.RealmList;
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -15,36 +13,25 @@ public class Task extends RealmObject {
     private String title;  // required
     private String description; // option
     private String type;
-    private RealmList<RealmDayOfWeek> daysOfTheWeek;
     private Date deadLine; // required
     private Boolean isDone = false;
     private Date alarmStart;
     private Date alarmEnd;
     private String priority;
 
-    public class RealmDayOfWeek extends RealmObject {
-        // Calendar.MONDAY, Calendar. 으로 접근 하면 됩니다.
-        private int dayOfWeek;
-
-        public RealmDayOfWeek(int day) {
-            this.dayOfWeek = day;
-        }
-    }
-
     public Task() {
     }
 
-    public Task(String title, List<Integer> daysOfWeek, Date deadLine,
-                Date alarmStart, Date alarmEnd, Priority priority) {
-        this(title, null, TaskType.ONCE, daysOfWeek, deadLine, alarmStart, alarmEnd, priority);
+    public Task(String title, Date deadLine, Date alarmStart, Date alarmEnd, Priority priority) {
+        this(title, null, TaskType.ONCE, deadLine, alarmStart, alarmEnd, priority);
     }
 
-    public Task(String title, TaskType type, List<Integer> daysOfWeek, Date deadLine,
+    public Task(String title, TaskType type, Date deadLine,
                 Date alarmStart, Date alarmEnd, Priority priority) {
-        this(title, null, type, daysOfWeek, deadLine, alarmStart, alarmEnd, priority);
+        this(title, null, type, deadLine, alarmStart, alarmEnd, priority);
     }
 
-    public Task(String title, String description, TaskType type, List<Integer> daysOfWeek,
+    public Task(String title, String description, TaskType type,
                 Date deadLine, Date alarmStart, Date alarmEnd, Priority priority) {
         this.title = title;
         this.description = description;
@@ -53,15 +40,6 @@ public class Task extends RealmObject {
         this.alarmStart = alarmStart;
         this.alarmEnd = alarmEnd;
         this.priority = priority.getPriority();
-
-        if (type != TaskType.MONTHLY) {
-            RealmList<RealmDayOfWeek> realmDaysOfWeek = new RealmList<>();
-
-            for (Integer day : daysOfWeek) {
-                realmDaysOfWeek.add(new RealmDayOfWeek(day));
-            }
-            this.daysOfTheWeek = realmDaysOfWeek;
-        }
     }
 
     // Getter
