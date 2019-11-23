@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.depromeet.hackthon7th.database.RealmCallback
@@ -21,7 +22,7 @@ class TaskDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task_detail)
         setSupportActionBar(toolbar_task_detail)
-        setTitle(R.string.task_detail_title)
+        setTitle(R.string.task_detail_label)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         initView()
@@ -38,6 +39,11 @@ class TaskDetailActivity : AppCompatActivity() {
             text?.let {
                 et_task_desc.checkLengthAndShowMessage(layout_task_desc, text.toString())
             }
+        }
+
+        cb_task_repeat.setOnClickListener {
+            et_task_repeat.visibility =
+                if (cb_task_repeat.isChecked) View.VISIBLE else View.INVISIBLE
         }
     }
 
