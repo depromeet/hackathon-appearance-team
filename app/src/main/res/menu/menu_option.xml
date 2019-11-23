@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/all"
+    android:title="전체" />
+  <item
+    android:id="@+id/routine"
+    android:title="정기알림" />
+  <item
+    android:id="@+id/specific"
+    android:title="특정알림" />
+</menu>
