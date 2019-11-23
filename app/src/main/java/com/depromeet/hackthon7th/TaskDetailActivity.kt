@@ -134,9 +134,18 @@ class TaskDetailActivity : AppCompatActivity() {
     }
 
     private fun addTaskIntoDatabase() {
+        val priorityArray = arrayOf(Priority.LOW, Priority.NORMAL, Priority.HIGH)
         val title = et_task_title.text.toString()
         val desc = et_task_desc.text.toString()
-        val newTask = Task(title, desc, TaskType.ONCE, Date(), Date(), Date(), Priority.HIGH)
+        val newTask = Task(
+            title,
+            desc,
+            if (cb_task_repeat.isChecked) TaskType.WEEKLY else TaskType.ONCE,
+            Date(),
+            Date(),
+            Date(),
+            priorityArray[priority]
+        )
 
         TaskUtil.addTask(newTask, object : RealmCallback {
             override fun onSuccess() {
