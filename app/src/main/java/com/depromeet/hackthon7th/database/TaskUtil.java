@@ -22,9 +22,9 @@ public class TaskUtil {
     }
 
     // 삭제
-    public static void deleteTask(Task task, RealmCallback callback) {
+    public static void deleteTask(int id, RealmCallback callback) {
         Realm.getDefaultInstance().executeTransactionAsync(realm -> {
-            Task realmTask = realm.where(Task.class).equalTo("id", task.getId()).findFirst();
+            Task realmTask = realm.where(Task.class).equalTo("id", id).findFirst();
 
             if (realmTask != null) {
                 realmTask.deleteFromRealm();
