@@ -15,7 +15,6 @@
       android:id="@+id/toolbar_task_detail"
       android:layout_width="0dp"
       android:layout_height="wrap_content"
-      android:maxLength="20"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
@@ -27,12 +26,15 @@
       android:layout_marginStart="16dp"
       android:layout_marginEnd="16dp"
       app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginTop="32dp"
+      app:hintEnabled="false"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@id/toolbar_task_detail">
 
       <EditText
         android:id="@+id/et_task_title"
         android:layout_width="match_parent"
+        android:textSize="14sp"
         android:backgroundTint="@color/color_gray"
         android:layout_height="wrap_content"
         android:textColorHighlight="@color/colorPrimary"
@@ -51,7 +53,9 @@
       android:layout_marginEnd="16dp"
       android:layout_marginBottom="34dp"
       app:layout_constraintEnd_toEndOf="parent"
+      android:layout_marginTop="16dp"
       app:layout_constraintStart_toStartOf="parent"
+      app:hintEnabled="false"
       app:layout_constraintTop_toBottomOf="@id/layout_task_title">
 
       <EditText
@@ -61,6 +65,7 @@
         android:hint="@string/task_detail_desc"
         android:backgroundTint="@color/color_gray"
         android:textColorHighlight="@color/colorPrimary"
+        android:textSize="14dp"
         android:inputType="text"
         android:maxLines="1" />
 
@@ -85,6 +90,7 @@
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
       android:layout_marginTop="16dp"
+      android:textSize="14sp"
       android:layout_marginEnd="16dp"
       android:backgroundTint="@color/color_gray"
       android:cursorVisible="false"
@@ -100,6 +106,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="16dp"
+      android:textSize="14dp"
       android:layout_marginEnd="16dp"
       android:backgroundTint="@color/color_gray"
       android:cursorVisible="false"
