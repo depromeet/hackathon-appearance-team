@@ -13,8 +13,8 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.view.WindowManager;
 import androidx.core.app.NotificationCompat;
-import com.depromeet.hackthon7th.MainActivity;
 import com.depromeet.hackthon7th.R;
+import com.depromeet.hackthon7th.main.ToDoListMainActivity;
 
 public class PushNotificationManager {
 
@@ -39,7 +39,7 @@ public class PushNotificationManager {
   }
 
   private PendingIntent createPendingIntent() {
-    Intent intent = new Intent(context, MainActivity.class);
+    Intent intent = new Intent(context, ToDoListMainActivity.class);
 
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
