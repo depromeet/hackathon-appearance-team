@@ -118,6 +118,18 @@ class TaskDetailActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(view: RangeSeekBar?, isLeft: Boolean) {
             }
         })
+
+        et_task_before.setOnClickListener {
+            layout_time_picker.visibility = View.VISIBLE
+        }
+
+        et_task_after.setOnClickListener {
+            layout_time_picker.visibility = View.VISIBLE
+        }
+
+        btn_time_picker_finish.setOnClickListener {
+            layout_time_picker.visibility = View.GONE
+        }
     }
 
     private fun checkAvailable(): Boolean {

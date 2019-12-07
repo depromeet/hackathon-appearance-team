@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
+  android:orientation="vertical"
   android:background="@android:color/black"
   tools:context=".TaskDetailActivity">
 
@@ -13,8 +14,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:paddingBottom="16dp">
+      android:layout_height="wrap_content">
 
       <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_task_detail"
@@ -270,7 +270,9 @@
         android:text="0시간 0분 후"
         android:textColor="@color/color_gray"
         android:textSize="14sp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sb_task_range" />
 
       <TextView
@@ -280,28 +282,32 @@
         android:drawableTop="@drawable/ic_triangle"
         android:text="오전 12:00"
         android:textColor="@color/color_gray"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sb_task_range" />
     </androidx.constraintlayout.widget.ConstraintLayout>
   </ScrollView>
 
-  <LinearLayout
-    android:id="@+id/bottom_sheet"
+  <com.depromeet.hackthon7th.ext.ActivityBottomSheet
+    android:id="@+id/layout_time_picker"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="222dp"
     android:background="@drawable/back_bottom_sheet"
     android:orientation="vertical"
-    android:padding="8dp"
-    android:visibility="invisible"
-    app:behavior_hideable="true"
-    app:behavior_peekHeight="100dp"
-    app:layout_behavior="@string/bottom_sheet_behavior"
-    app:layout_constraintBottom_toBottomOf="parent">
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent">
 
-    <TimePicker
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
-  </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+      android:id="@+id/btn_time_picker_finish"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="end"
+      android:background="@android:color/transparent"
+      android:text="@string/all_finish"
+      android:textColor="@android:color/black" />
+  </com.depromeet.hackthon7th.ext.ActivityBottomSheet>
+</LinearLayout>
