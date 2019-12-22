@@ -289,7 +289,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
   </ScrollView>
 
-  <com.depromeet.hackthon7th.ext.ActivityBottomSheet
+  <com.depromeet.hackthon7th.ext.BottomSheetLayout
     android:id="@+id/layout_time_picker"
     android:layout_width="match_parent"
     android:layout_height="222dp"
@@ -309,5 +309,5 @@
       android:background="@android:color/transparent"
       android:text="@string/all_finish"
       android:textColor="@android:color/black" />
-  </com.depromeet.hackthon7th.ext.ActivityBottomSheet>
+  </com.depromeet.hackthon7th.ext.BottomSheetLayout>
 </LinearLayout>

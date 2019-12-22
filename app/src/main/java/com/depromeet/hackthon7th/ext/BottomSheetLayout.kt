@@ -8,7 +8,7 @@ import android.widget.LinearLayout
 import com.depromeet.hackthon7th.R
 
 
-class ActivityBottomSheet @JvmOverloads
+class BottomSheetLayout @JvmOverloads
 constructor(
     context: Context,
     attrs: AttributeSet? = null,
