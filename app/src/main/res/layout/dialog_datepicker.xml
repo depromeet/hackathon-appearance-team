@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
+  android:layout_height="wrap_content"
   android:background="@android:color/black"
   android:orientation="vertical"
   android:paddingStart="20dp">
@@ -30,9 +30,75 @@
       android:textColor="@android:color/white"
       android:textSize="16sp" />
 
-    <view
+    <View
       android:layout_width="match_parent"
       android:layout_height="1dp"
       android:background="@color/color_darker_gray" />
   </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="18dp"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <Button
+      android:id="@+id/btn_dialog_date"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="10dp"
+      android:background="@drawable/back_orange_btn"
+      android:paddingStart="10dp"
+      android:paddingEnd="10dp"
+      android:text="4.3(목)"
+      android:textColor="@android:color/white"
+      android:textSize="28sp"
+      android:textStyle="bold" />
+
+    <Button
+      android:id="@+id/btn_dialog_time"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="10dp"
+      android:background="@android:color/transparent"
+      android:paddingStart="10dp"
+      android:paddingEnd="10dp"
+      android:text="3:30 PM"
+      android:textColor="@android:color/white"
+      android:textSize="28sp"
+      android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_marginEnd="20dp">
+
+    <CalendarView
+      android:id="@+id/cal_dialog"
+      style="@style/CalenderViewCustom"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+
+    <TimePicker
+      android:id="@+id/tp_dialog"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:numbersSelectorColor="@color/colorPrimary"
+      android:visibility="gone" />
+
+  </FrameLayout>
+
+  <Button
+    android:id="@+id/btn_dialog_ok"
+    android:layout_width="43dp"
+    android:layout_height="43dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/back_gray_btn"
+    android:text="@string/all_ok"
+    android:textColor="@android:color/white" />
 </LinearLayout>
