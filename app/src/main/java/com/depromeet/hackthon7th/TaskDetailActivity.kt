@@ -8,9 +8,12 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.depromeet.hackthon7th.database.*
+import com.depromeet.hackthon7th.ext.DateTimePickerDialog
+import com.depromeet.hackthon7th.ext.RepeatSettingDialog
 import com.depromeet.hackthon7th.ext.Toaster
 import com.depromeet.hackthon7th.ext.checkLengthAndShowMessage
 import com.depromeet.hackthon7th.util.getAfterTime
@@ -52,10 +55,12 @@ class TaskDetailActivity : AppCompatActivity() {
         et_task_date.setText(getCurrentDateTime())
         tv_task_time.text = getCurrentTime()
         et_task_date.setOnClickListener {
-
+            DateTimePickerDialog(this) {
+                Toast.makeText(this, "시간 설정 완료", Toast.LENGTH_SHORT).show()
+            }.show()
         }
         et_task_repeat.setOnClickListener {
-
+            RepeatSettingDialog(this).show()
         }
         et_task_title.addTextChangedListener { text ->
             text?.let {
