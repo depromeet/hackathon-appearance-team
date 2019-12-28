@@ -3,6 +3,17 @@
 
   <string name="all_finish">완료</string>
   <string name="all_ok">OK</string>
+  <string name="all_am">AM</string>
+  <string name="all_pm">PM</string>
+  <string-array name="all_weekday">
+    <item>월</item>
+    <item>화</item>
+    <item>수</item>
+    <item>목</item>
+    <item>금</item>
+    <item>토</item>
+    <item>일</item>
+  </string-array>
 
   <string name="task_detail_label">추가</string>
   <string name="task_detail_title">제목</string>

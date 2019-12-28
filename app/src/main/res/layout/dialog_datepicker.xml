@@ -83,14 +83,39 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content" />
 
-    <TimePicker
-      android:id="@+id/tp_dialog"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="24dp"
-      android:numbersSelectorColor="@color/colorPrimary"
-      android:visibility="gone" />
+    <FrameLayout
+      android:id="@+id/layout_dialog_time"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:visibility="gone">
 
+      <TimePicker
+        android:id="@+id/tp_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:numbersSelectorColor="@color/colorPrimary" />
+
+      <Button
+        android:id="@+id/btn_dialog_am"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="43dp"
+        android:background="@drawable/back_gray_btn"
+        android:text="@string/all_am"
+        android:textColor="@android:color/white" />
+
+      <Button
+        android:id="@+id/btn_dialog_pm"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="43dp"
+        android:background="@drawable/back_darker_gray_btn"
+        android:text="@string/all_pm"
+        android:textColor="@android:color/white" />
+    </FrameLayout>
   </FrameLayout>
 
   <Button
@@ -98,7 +123,7 @@
     android:layout_width="43dp"
     android:layout_height="43dp"
     android:layout_gravity="center_horizontal"
-    android:background="@drawable/back_gray_btn"
+    android:background="@drawable/back_darker_gray_btn"
     android:text="@string/all_ok"
     android:textColor="@android:color/white" />
 </LinearLayout>
